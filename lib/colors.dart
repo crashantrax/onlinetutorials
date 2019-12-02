@@ -9,4 +9,4 @@ const CeBrown900 = const Color(0xFFA1887F);/*0xFF442B1D*/
 const CeErrorRed = const Color(0xFFA1887F);
 
 const CeSurfaceWhite = const Color(0xFFFFFBFA);
-const CeBackgroundWhite = Colors.blueGrey;
+const CeBackgroundWhite = Colors.black;

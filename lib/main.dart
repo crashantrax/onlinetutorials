@@ -128,9 +128,9 @@ class _MyHomePageState extends State<MyHomePage> {
       leading: const Icon(Icons.person),
       title: TextFormField(
         decoration: InputDecoration(
-            labelText: "your Pseudo",
+            labelText: "your Username",
             filled: true,
-            hintText: "Write your Pseudo please",
+            hintText: "Write your Username please",
             border: InputBorder.none),
         controller: _pseudoController,
       ),
@@ -152,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //         _isSecured = !_isSecured;
             //       });
             //     }),
-            labelText: "your Password",
+            labelText: "    your Password",
             hintText: "Write your Password please",
             border: InputBorder.none),
         obscureText: _isSecured,
