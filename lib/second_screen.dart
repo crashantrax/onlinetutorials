@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SecondScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,8 +18,10 @@ class SecondScreen extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
-  var idUser,username,firstname,lastname;
-  SecondPage({Key key, this.idUser,this.firstname,this.lastname,this.username}) : super(key: key);
+  var idUser, username, firstname, lastname;
+  SecondPage(
+      {Key key, this.idUser, this.firstname, this.lastname, this.username})
+      : super(key: key);
 
   _launchURL() async {
     const url = 'tel:27181132';
@@ -52,18 +53,16 @@ class SecondPage extends StatelessWidget {
                         decoration: new BoxDecoration(
                           shape: BoxShape.circle,
                           image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new NetworkImage(
-                                  "")),
+                              fit: BoxFit.fill, image: new NetworkImage("")),
                         ),
                       ),
                       new Padding(
-                        padding: const EdgeInsets.all(24.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 50.0),
                         child: new Column(
                           children: <Widget>[
-                            Text("User Name : ${this.username}"),
-                            Text("First Name : ${this.firstname}"),
-                            Text("Last Name : ${this.lastname}"),
+                            // Text("User Name : ${this.username}"),
+                            Text("Name : ${this.firstname} ${this.lastname}"),
+                            // Text("Last Name : ${this.lastname}"),
                           ],
                         ),
                       ),
@@ -74,23 +73,55 @@ class SecondPage extends StatelessWidget {
             ),
           ),
           new ListTile(
-            title: new Text('Your Profile'),
-            onTap: () {},
-          ),
-          new ListTile(
-            title: new Text('Your Contract'),
-            onTap: () {},
-          ),
-          new ListTile(
-            title: new Text('Call Customer Service'),
+            title: new Text('Profile'),
             onTap: () {
-              _launchURL();
+              var route = new MaterialPageRoute(
+                builder: (BuildContext context) =>
+                    new Profile(idUser: this.idUser),
+              );
+              Navigator.of(context).push(route);
             },
           ),
           new Divider(),
           new ListTile(
             title: new Text('About Us'),
             onTap: () {},
+          ),
+          new ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage("images/youtube.png"),
+            ),
+            title: Text('Main Channel'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.pop(context);
+            },
+          ),
+          new ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage("images/fb.png"),
+            ),
+            title: Text('Facebook'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.pop(context);
+            },
+          ),
+          new ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage("..."),
+            ),
+            title: Text('Website'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.pop(context);
+            },
           ),
         ],
       )),
@@ -99,18 +130,18 @@ class SecondPage extends StatelessWidget {
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              MaterialButton(
-                color: Theme.of(context).accentColor,
-                minWidth: 170.0,
-                onPressed: () {
-                  var route = new MaterialPageRoute(
-                    builder: (BuildContext context) =>
-                        new Profile(idUser: this.idUser),
-                  );
-                  Navigator.of(context).push(route);
-                },
-                child: Text("Profile"),
-              ),
+              // MaterialButton(
+              //   color: Theme.of(context).accentColor,
+              //   minWidth: 170.0,
+              //   onPressed: () {
+              //     var route = new MaterialPageRoute(
+              //       builder: (BuildContext context) =>
+              //           new Profile(idUser: this.idUser),
+              //     );
+              //     Navigator.of(context).push(route);
+              //   },
+              //   child: Text("Profile"),
+              // ),
               // MaterialButton(
               //   minWidth: 170.0,
               //   color: Theme.of(context).accentColor,

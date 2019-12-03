@@ -15,8 +15,8 @@ class _RegisterState extends State<Register> {
       accentColor: CeBrown900,
       primaryColor: CePink100,
       buttonColor: CePink100,
-      scaffoldBackgroundColor: CeBackgroundWhite,
-      cardColor: CeBackgroundWhite,
+      scaffoldBackgroundColor: CeBackgroundBlack,
+      cardColor: CeBackgroundBlack,
       textSelectionColor: CePink100,
       errorColor: CeErrorRed,
       //TODO: Add the text themes (103)

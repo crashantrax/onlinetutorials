@@ -31,13 +31,10 @@ class _MyAppState extends State<MyApp> {
       accentColor: CeBrown900,
       primaryColor: CePink100,
       buttonColor: CePink100,
-      scaffoldBackgroundColor: CeBackgroundWhite,
-      cardColor: CeBackgroundWhite,
+      scaffoldBackgroundColor: CeBackgroundBlack,
+      cardColor: CeBackgroundBlack,
       textSelectionColor: CePink100,
       errorColor: CeErrorRed,
-      //TODO: Add the text themes (103)
-      //TODO: Add the icon themes (103)
-      //TODO: Decorate the inputs (103)
     );
   }
 }
@@ -96,8 +93,12 @@ class _MyHomePageState extends State<MyHomePage> {
           // Navigator.of(context).pushNamed("/seconds");
 
           var route = new MaterialPageRoute(
-            builder: (BuildContext context) =>
-                new SecondPage(idUser: data[0]['user_id'],firstname: data[0]['first_name'],lastname: data[0]['last_name'],username: data[0]['username'],),
+            builder: (BuildContext context) => new SecondPage(
+              idUser: data[0]['user_id'],
+              firstname: data[0]['first_name'],
+              lastname: data[0]['last_name'],
+              username: data[0]['username'],
+            ),
           );
           Navigator.of(context).push(route);
         } else {
@@ -117,7 +118,8 @@ class _MyHomePageState extends State<MyHomePage> {
           shape: BoxShape.circle,
           image: new DecorationImage(
               fit: BoxFit.fill,
-              image: new NetworkImage("https://webonlinetutorials.000webhostapp.com/FlutterTraining/images/WOT2.png")),
+              image: new NetworkImage(
+                  "https://webonlinetutorials.000webhostapp.com/FlutterTraining/images/WOT2.png")),
         ),
       ),
     );
@@ -128,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
       leading: const Icon(Icons.person),
       title: TextFormField(
         decoration: InputDecoration(
-            labelText: "your Username",
+            labelText: "Username",
             filled: true,
             hintText: "Write your Username please",
             border: InputBorder.none),
@@ -152,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
             //         _isSecured = !_isSecured;
             //       });
             //     }),
-            labelText: "    your Password",
+            labelText: "   Password",
             hintText: "Write your Password please",
             border: InputBorder.none),
         obscureText: _isSecured,
@@ -165,7 +167,6 @@ class _MyHomePageState extends State<MyHomePage> {
     var createaccount = new Container(
       child: FlatButton(
         child: const Text('Register'),
-
         onPressed: () {
           var route = new MaterialPageRoute(
             builder: (BuildContext context) => new Register(),
@@ -194,53 +195,61 @@ class _MyHomePageState extends State<MyHomePage> {
 /*************************************************/
 
     /********************Button Cancel ***********************/
-    var cancelButton = new Container(
-      child: FlatButton(
-        child: const Text('Cancel'),
-        onPressed: () {
-          _passwordController.clear();
-          _pseudoController.clear();
-        },
-      ),
-    );
+    // var cancelButton = new Container(
+    //   child: FlatButton(
+    //     child: const Text('Cancel'),
+    //     onPressed: () {
+    //       _passwordController.clear();
+    //       _pseudoController.clear();
+    //     },
+    //   ),
+    // );
 
 /***********************************************/
 
     return new Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: new ListView(
-        children: <Widget>[
-          SizedBox(
-            height: 50.0,
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/splash.png"),
+            fit: BoxFit.cover,
           ),
-          logo,
-          SizedBox(
-            height: 50.0,
-          ),
-          new Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: new Card(
-              elevation: 8.0,
-              color: Colors.white,
-              child: new Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Column(
-                  children: <Widget>[pseudo, password,
-                  SizedBox(
-                    height: 20.0,
+        ),
+        child: new ListView(
+          children: <Widget>[
+            SizedBox(
+              height: 190.0,
+            ),
+            // logo,
+            SizedBox(
+              height: 50.0,
+            ),
+            new Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: new Card(
+                elevation: 8.0,
+                color: Colors.white,
+                child: new Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Column(
+                    children: <Widget>[
+                      pseudo,
+                      password,
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[ createaccount,loginButton],
+                      ),
+                    ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[cancelButton, loginButton],
-                  ),
-                  ],
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 5.0,),
-          createaccount
-        ],
+          ],
+        ),
       ),
     );
   }
