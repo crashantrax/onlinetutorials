@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-const CePink50 = const Color(0xFFFEEAE6);
-const CePink100 = const Color(0xFFFEDBD0);
-const CePink300 = const Color(0xFFFBB8AC);
+const CeBlack = Colors.black;
+const CeBlack1 = Colors.black;
+const CeBlack2 = Colors.black;
 
 const CeBrown900 = Colors.grey;/*0xFF442B1D*/
 

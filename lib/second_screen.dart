@@ -36,7 +36,7 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Second Screen"),
+        title: new Text("Web Online Tutorials"),
       ),
       drawer: new Drawer(
           child: new ListView(

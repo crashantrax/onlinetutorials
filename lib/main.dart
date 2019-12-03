@@ -29,11 +29,11 @@ class _MyAppState extends State<MyApp> {
     final ThemeData base = ThemeData.light();
     return base.copyWith(
       accentColor: CeBrown900,
-      primaryColor: CePink100,
-      buttonColor: CePink100,
+      primaryColor: CeBlack1,
+      buttonColor: CeBlack1,
       scaffoldBackgroundColor: CeBackgroundBlack,
       cardColor: CeBackgroundBlack,
-      textSelectionColor: CePink100,
+      textSelectionColor: CeBlack1,
       errorColor: CeErrorRed,
     );
   }
