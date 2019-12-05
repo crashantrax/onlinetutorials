@@ -54,7 +54,7 @@ class _RegisterState extends State<Register> {
   var _passwordController = new TextEditingController();
   void _addData() {
     var url =
-        "https://webonlinetutorials.000webhostapp.com/FlutterTraining/NewUser.php";
+        "http://webonlinetutorial.ga/FlutterTraining/NewUser.php";
 
     http.post(url, body: {
       "username": _usernameController.text,

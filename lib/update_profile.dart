@@ -54,7 +54,7 @@ class _UpdateState extends State<Update> {
 
   void _editData() async {
     var url =
-        "https://webonlinetutorials.000webhostapp.com/FlutterTraining/ModifyProfile.php";
+        "http://webonlinetutorial.ga/FlutterTraining/ModifyProfile.php";
 
     var response = await http.post(url, body: {
       "iduser": widget.idUser,
@@ -76,7 +76,7 @@ class _UpdateState extends State<Update> {
 
   _fetchData() async {
     final url =
-        "https://webonlinetutorials.000webhostapp.com/FlutterTraining/ConsultProfile.php?ID=${widget.idUser}";
+        "http://webonlinetutorial.ga/FlutterTraining/ConsultProfile.php?ID=${widget.idUser}";
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final map = json.decode(response.body);
