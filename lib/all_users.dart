@@ -43,7 +43,7 @@ class _AllUsersState extends State<AllUsers> {
 
   void _deletUser(var id) async {
     var url =
-        "https://astringent-dents.000webhostapp.com/EConstat/FlutterTraining/DeleteUser.php";
+        "http://webonlinetutorial.ga/FlutterTraining/FlutterTraining/DeleteUser.php";
 
     var response = await http.post(url, body: {"userid": id});
     if (response.statusCode == 200) {
@@ -56,7 +56,7 @@ class _AllUsersState extends State<AllUsers> {
 
   _getData() async {
     final url =
-        "https://astringent-dents.000webhostapp.com/EConstat/FlutterTraining/SelectAllUsers.php";
+        "http://webonlinetutorial.ga/FlutterTraining/SelectAllUsers.php";
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final map = json.decode(response.body);

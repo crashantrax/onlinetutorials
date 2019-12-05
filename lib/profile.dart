@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
   Future<String> getLogin(String id) async {
     var response = await http.get(
         Uri.encodeFull(
-            "https://webonlinetutorials.000webhostapp.com/FlutterTraining/ConsultProfile.php?ID=" +
+            "http://webonlinetutorial.ga/FlutterTraining/ConsultProfile.php?ID=" +
                 id +
                 ""),
         headers: {"Accept": "application/json"});

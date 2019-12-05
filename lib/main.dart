@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Future<String> getLogin(String pseudo) async {
       var response = await http.get(
           Uri.encodeFull(
-              "https://webonlinetutorials.000webhostapp.com/FlutterTraining/Login.php?PSEUDO=${pseudo}"),
+              "http://webonlinetutorial.ga/FlutterTraining/Login.php?PSEUDO=${pseudo}"),
           headers: {"Accept": "application/json"});
 
       print(response.body);
@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
           image: new DecorationImage(
               fit: BoxFit.fill,
               image: new NetworkImage(
-                  "https://webonlinetutorials.000webhostapp.com/FlutterTraining/images/WOT2.png")),
+                  "http://webonlinetutorial.ga/FlutterTraining/images/WOT2.png")),
         ),
       ),
     );
