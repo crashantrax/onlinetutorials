@@ -1,139 +1,83 @@
-import 'package:onlinetutorials/all_users.dart';
-import 'package:onlinetutorials/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-/**** CATEGORY ****/
 import 'package:onlinetutorials/content/html/htmlreferences.dart';
+import 'package:onlinetutorials/main.dart';
 import 'package:onlinetutorials/content/html/learnhtml.dart';
 import 'package:onlinetutorials/content/css/learncss.dart';
 import 'package:onlinetutorials/content/css/cssreferences.dart';
 import 'package:onlinetutorials/content/javascript/learnjavascript.dart';
 import 'package:onlinetutorials/content/javascript/javascriptreferences.dart';
 
-class SecondScreen extends StatelessWidget {
+void main() => runApp(Homepagenav());
+
+class Homepagenav extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Second Page",
-      theme: new ThemeData(
-        primarySwatch: Colors.black,
-        primaryColor: Colors.black,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        
+        primarySwatch: Colors.grey,
       ),
-      home: SecondPage(),
+      home: Homepage(title: 'Web Online Tutorials WOT'),
     );
   }
 }
 
-class SecondPage extends StatelessWidget {
-  var idUser, username, firstname, lastname;
-  SecondPage(
-      {Key key, this.idUser, this.firstname, this.lastname, this.username})
-      : super(key: key);
+class Homepage extends StatefulWidget {
+  Homepage({Key key, this.title}) : super(key: key);
 
-  _launchURL() async {
-    const url = 'tel:27181132';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not make Call';
-    }
-  }
+
+
+  final String title;
+
+  @override
+  HomepageState createState() => HomepageState();
+}
+
+class HomepageState extends State<Homepage> {
+
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Web Online Tutorials"),
+
+    return MaterialApp(
+    title: 'WOT',
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text('Web Online Tutorials (WOT)'),
       ),
-      drawer: new Drawer(
-          child: new ListView(
-        children: <Widget>[
-          new DrawerHeader(
-            child: new Row(
-              children: <Widget>[
-                new Expanded(
-                  child: Row(
-                    children: <Widget>[
-                      new Container(
-                        width: 70.0,
-                        height: 70.0,
-                        decoration: new BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.fill, image: new NetworkImage("")),
-                        ),
-                      ),
-                      new Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 50.0),
-                        child: new Column(
-                          children: <Widget>[
-                            // Text("User Name : ${this.username}"),
-                            Text("Name : ${this.firstname} ${this.lastname}"),
-                            // Text("Last Name : ${this.lastname}"),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Text("Drawer Header"),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+              ),
             ),
-          ),
-          new ListTile(
-            title: new Text('Profile'),
-            onTap: () {
-              var route = new MaterialPageRoute(
-                builder: (BuildContext context) =>
-                    new Profile(idUser: this.idUser),
-              );
-              Navigator.of(context).push(route);
-            },
-          ),
-          new Divider(),
-          new ListTile(
-            title: new Text('About Us'),
-            onTap: () {},
-          ),
-          new ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("images/youtube.png"),
-            ),
-            title: Text('Main Channel'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
-            },
-          ),
-          new ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("images/fb.png"),
-            ),
-            title: Text('Facebook'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
-            },
-          ),
-          new ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("..."),
-            ),
-            title: Text('Website'),
-            onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
-              Navigator.pop(context);
-            },
-          ),
-        ],
-      )),
-      body: new Container(
+              new ListTile(
+                // leading: CircleAvatar(
+                //   backgroundImage: AssetImage("assets/todolistlogo.jpg"),
+                // ),
+                title: Text('Drawer Example'),
+              //   onTap: (){
+              //     Navigator.push(
+              //       context,
+              //       new MaterialPageRoute(
+           
+
+              //     ));
+
+              // },
+            )
+            
+          ],
+        )
+      ),
+
+        body: new Container(
           alignment: Alignment.topRight,
             child: new Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -515,55 +459,17 @@ class SecondPage extends StatelessWidget {
     )
 
 
-      // new Container(
-      //   child: new Center(
-      //     child: new Column(
-      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //       children: <Widget>[
-      //         // MaterialButton(
-      //         //   color: Theme.of(context).accentColor,
-      //         //   minWidth: 170.0,
-      //         //   onPressed: () {
-      //         //     var route = new MaterialPageRoute(
-      //         //       builder: (BuildContext context) =>
-      //         //           new Profile(idUser: this.idUser),
-      //         //     );
-      //         //     Navigator.of(context).push(route);
-      //         //   },
-      //         //   child: Text("Profile"),
-      //         // ),
-      //         // MaterialButton(
-      //         //   minWidth: 170.0,
-      //         //   color: Theme.of(context).accentColor,
-      //         //   onPressed: () {
-      //         //     var route = new MaterialPageRoute(
-      //         //       builder: (BuildContext context) => new AllUsers(),
-      //         //     );
-      //         //     Navigator.of(context).push(route);
-      //         //   },
-      //         //   child: Text("All Users"),
-      //         // ),
-      //         // MaterialButton(
-      //         //   minWidth: 170.0,
-      //         //   color: Theme.of(context).accentColor,
-      //         //   onPressed: () {
-      //         //     _launchURL();
-      //         //   },
-      //         //   child: Text("Call Customer Service"),
-      //         // ),
-      //         // MaterialButton(
-      //         //   minWidth: 170.0,
-      //         //   color: Theme.of(context).accentColor,
-      //         //   onPressed: () {},
-      //         //   child: Text("Econstat"),
-      //         // ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
+    )
     );
+
+    
+    
+
+
   }
 }
+
+
 
 Future navigateToLearnhtml(context) async {
   Navigator.push(context, MaterialPageRoute(builder: (context) => Learnhtml()));
