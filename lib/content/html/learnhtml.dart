@@ -1,432 +1,187 @@
+import 'package:onlinetutorials/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:onlinetutorials/content/homepage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-void main() => runApp(Learnhtmlnav());
 
 class Learnhtmlnav extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
- 
-        primarySwatch: Colors.grey,
+      title: "Second Page",
+      theme: new ThemeData(
+        primarySwatch: Colors.black,
+        primaryColor: Colors.black,
       ),
-      home: Learnhtml(title: 'Learn HTML'),
+      home: Learnhtml(),
     );
   }
 }
 
+class Learnhtml extends StatelessWidget {
+  // var idUser, username, firstname, lastname;
+  // Learncss(
+  //     {Key key, this.idUser, this.firstname, this.lastname, this.username})
+  //     : super(key: key);
 
-class Learnhtml extends StatefulWidget {
-  Learnhtml({Key key, this.title}) : super(key: key);
-
-
-
-  final String title;
-
-  @override
-  LearnhtmlState createState() => LearnhtmlState ();
-}
-
-class LearnhtmlState  extends State<Learnhtml> {
 
 
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(
-    title: 'WOT',
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text('LEARN HTML'),
-      ),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: Text("Drawer Header"),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-              ),
-            ),
-              new ListTile(
-                // leading: CircleAvatar(
-                //   backgroundImage: AssetImage("assets/todolistlogo.jpg"),
-                // ),
-                title: Text('Drawer Example'),
-                onTap: (){
-
-              },
-            )
-            
-          ],
-        )
-      ),
-
-        body: new Container(
-          alignment: Alignment.topRight,
-            child: new Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "HTML INTRODUCTION",
-                        style: new TextStyle(
-                            fontSize: 30.0,
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("LEARN HTML"),
+        ),
+        
+        body: ListView(children: <Widget>[
+          new Container(
+              alignment: Alignment.topRight,
+              child: new Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: new FlatButton(
-                          color: Colors.lightBlue,
-                          textColor: Colors.white,
-                          disabledColor: Colors.grey,
-                          disabledTextColor: Colors.black,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            navigateToHomepage(context);
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => LatestUpload()),
-                            // );
-                            /*...*/
-                          },
-                          child: Text(
-                            "< Previous",
-                            style: TextStyle(
-                                fontSize: 15.0, fontWeight: FontWeight.w600),
-                          ),
-                        )),
-                    Padding(
-                        padding: const EdgeInsets.only(left: 130.0),
-                        child: new FlatButton(
-                          color: Colors.lightBlue,
-                          textColor: Colors.white,
-                          disabledColor: Colors.grey,
-                          disabledTextColor: Colors.black,
-                          splashColor: Colors.grey,
-                          onPressed: () {
-                            // navigateToHtmlreferences(context);
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => LatestUpload()),
-                            // );
-                            /*...*/
-                          },
-                          child: Text(
-                            "Next >",
-                            style: TextStyle(
-                                fontSize: 15.0, fontWeight: FontWeight.w600),
-                          ),
-                        )),
-                  ]),
+                    
+                    
 
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "What is HTML?",
-                        style: new TextStyle(
-                            fontSize: 35.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Roboto"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-                    ),
-                  ]
-                  ),
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "HTML is the standard markup language for",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: bold,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-                
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "creating web pages.",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
+                    // new Row(
+                    //     mainAxisAlignment: MainAxisAlignment.center,
+                    //     mainAxisSize: MainAxisSize.max,
+                    //     crossAxisAlignment: CrossAxisAlignment.center,
+                    //     children: <Widget>[
+                    //       new Padding(
+                    //         child: new Text(
+                    //           "SQL",
+                    //           style: new TextStyle(
+                    //               fontSize: 60.0,
+                    //               color: Colors.black,
+                    //               fontWeight: FontWeight.w700,
+                    //               fontFamily: "Ewert"),
+                    //         ),
+                    //         padding:
+                    //             const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                    //       ),
+                    //     ]
+                    //     ),
+                    // new Row(
+                    //     mainAxisAlignment: MainAxisAlignment.center,
+                    //     mainAxisSize: MainAxisSize.max,
+                    //     crossAxisAlignment: CrossAxisAlignment.center,
+                    //     children: <Widget>[
+                    //       new Padding(
+                    //         child: new Text(
+                    //           "The language for accessing databases",
+                    //           maxLines: 2,
+                    //           style: new TextStyle(
+                    //               fontSize: 15.0,
+                    //               color: Colors.black,
+                    //               // fontWeight: FontWeight.w700,
+                    //               fontFamily: "Ewert"),
+                    //         ),
+                    //         padding:
+                    //             const EdgeInsets.fromLTRB(30.0, 12.0, 10.0, 12.0),
+                    //       ),
+                    //     ]
+                    //     ),
+                    // new Row(
+                    //     mainAxisAlignment: MainAxisAlignment.center,
+                    //     mainAxisSize: MainAxisSize.max,
+                    //     crossAxisAlignment: CrossAxisAlignment.center,
+                    //     children: <Widget>[
 
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "- HTML stands for Hyper Markup Language",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 20.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
+                    //       Padding(
+                    //           padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    //           child: new FlatButton(
+                    //             color: Colors.lightBlue,
+                    //             textColor: Colors.white,
+                    //             disabledColor: Colors.grey,
+                    //             disabledTextColor: Colors.black,
+                    //             splashColor: Colors.grey,
+                    //             onPressed: () {
+                    //               // Navigator.push(
+                    //               //   context,
+                    //               //   MaterialPageRoute(
+                    //               //       builder: (context) => LatestUpload()),
+                    //               // );
+                    //               /*...*/
+                    //             },
+                    //             child: Text(
+                    //               "LEARN SQL",
+                    //               style: TextStyle(
+                    //                   fontSize: 15.0, fontWeight: FontWeight.w600),
+                    //             ),
+                    //           )),
+                    //       Padding(
+                    //           padding: const EdgeInsets.only(left: 10.0),
+                    //           child: new FlatButton(
+                    //             color: Colors.lightBlue,
+                    //             textColor: Colors.white,
+                    //             disabledColor: Colors.grey,
+                    //             disabledTextColor: Colors.black,
+                    //             splashColor: Colors.grey,
+                    //             onPressed: () {
+                    //               // Navigator.push(
+                    //               //   context,
+                    //               //   MaterialPageRoute(
+                    //               //       builder: (context) => LatestUpload()),
+                    //               // );
+                    //               /*...*/
+                    //             },
+                    //             child: Text(
+                    //               "SQL REFERENCES",
+                    //               style: TextStyle(
+                    //                   fontSize: 15.0, fontWeight: FontWeight.w600),
+                    //             ),
+                    //           )),
+                    //     ]),
+                  ])),
+        ])
 
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "- HTML describes the structure of a Web page",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "- HTML consists of a series of elements",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "- HTML elements tell the browser how to",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "display the content",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "- HTML elements are represented by tags",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "- HTML tags label pieces of content such as",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "'heading', 'paragraph', 'table', and so on",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "- Browsers do not display the HTML tags, but use",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    new Padding(
-                      child: new Text(
-                        "them to render the content of the page",
-                        maxLines: 4,
-                        style: new TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.black,
-                            // fontWeight: FontWeight.w700,
-                            fontFamily: "Ewert"),
-                      ),
-                      padding:
-                          const EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 0.0),
-                    ),
-                  ]
-                  ),
-
-    
-    
-    
-                ])
-                ))
-                );
-
+        // new Container(
+        //   child: new Center(
+        //     child: new Column(
+        //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //       children: <Widget>[
+        //         // MaterialButton(
+        //         //   color: Theme.of(context).accentColor,
+        //         //   minWidth: 170.0,
+        //         //   onPressed: () {
+        //         //     var route = new MaterialPageRoute(
+        //         //       builder: (BuildContext context) =>
+        //         //           new Profile(idUser: this.idUser),
+        //         //     );
+        //         //     Navigator.of(context).push(route);
+        //         //   },
+        //         //   child: Text("Profile"),
+        //         // ),
+        //         // MaterialButton(
+        //         //   minWidth: 170.0,
+        //         //   color: Theme.of(context).accentColor,
+        //         //   onPressed: () {
+        //         //     var route = new MaterialPageRoute(
+        //         //       builder: (BuildContext context) => new AllUsers(),
+        //         //     );
+        //         //     Navigator.of(context).push(route);
+        //         //   },
+        //         //   child: Text("All Users"),
+        //         // ),
+        //         // MaterialButton(
+        //         //   minWidth: 170.0,
+        //         //   color: Theme.of(context).accentColor,
+        //         //   onPressed: () {
+        //         //     _launchURL();
+        //         //   },
+        //         //   child: Text("Call Customer Service"),
+        //         // ),
+        //         // MaterialButton(
+        //         //   minWidth: 170.0,
+        //         //   color: Theme.of(context).accentColor,
+        //         //   onPressed: () {},
+        //         //   child: Text("Econstat"),
+        //         // ),
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        );
   }
-}
-
-Future navigateToHomepage(context) async {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));
 }
