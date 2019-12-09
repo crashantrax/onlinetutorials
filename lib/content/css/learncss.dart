@@ -44,9 +44,9 @@ class Learncss extends StatelessWidget {
                   children: <Widget>[
                     new Padding(
                       child: new Text(
-                        "CSS Tutorial",
+                        "Examples in Each Chapter",
                         style: new TextStyle(
-                            fontSize: 40.0,
+                            fontSize: 30.0,
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
                             fontFamily: "Ewert"),
@@ -55,6 +55,21 @@ class Learncss extends StatelessWidget {
                           const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                     ),
                   ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(35.0, 0.0, 0.0, 10.0),
+                  child: new Align(
+                    alignment: Alignment.centerLeft,
+                    child: new Text(
+                      "This CSS tutorial contains hundreds of CSS examples."+"\n"
+                      +"With our online editor, you can edit the CSS, and click on a button to view the result.",
+                      style: new TextStyle(
+                          fontSize: 13.0,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: "Ewert"),
+                    ),
+                  ),
                 ),
               ],
             ),
