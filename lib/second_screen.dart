@@ -3,6 +3,7 @@ import 'package:onlinetutorials/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:async';
+import 'main.dart';
 
 /**** CATEGORY ****/
 import 'package:onlinetutorials/content/html/htmlreferences.dart';
@@ -106,6 +107,7 @@ class SecondPage extends StatelessWidget {
             title: new Text('About Us'),
             onTap: () {},
           ),
+          new Divider(),
           new ListTile(
             leading: CircleAvatar(
               backgroundImage: AssetImage("images/youtube.png"),
@@ -142,6 +144,18 @@ class SecondPage extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+          new Divider(),
+          new ListTile(
+            title: new Text('Logout'),
+            onTap: () {
+              var route = new MaterialPageRoute(
+                builder: (BuildContext context) =>
+                    new MyHomePage(),
+              );
+              Navigator.of(context).push(route);
+            },
+          ),
+          new Divider(),
         ],
       )),
       body: ListView(

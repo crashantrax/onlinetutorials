@@ -94,7 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
           var route = new MaterialPageRoute(
             builder: (BuildContext context) => new SecondPage(
-              // selectedUrl: "http://webonlinetutorial.ga",
               idUser: data[0]['user_id'],
               firstname: data[0]['first_name'],
               lastname: data[0]['last_name'],
