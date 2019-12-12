@@ -2,6 +2,7 @@ import 'package:onlinetutorials/all_users.dart';
 import 'package:onlinetutorials/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:async';
 
 /**** CATEGORY ****/
 import 'package:onlinetutorials/content/html/htmlreferences.dart';
@@ -28,9 +29,16 @@ class SecondScreen extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
+  final Completer<WebViewController> _controller =
+      Completer<WebViewController>();
+
   var idUser, username, firstname, lastname;
   SecondPage(
-      {Key key, this.idUser, this.firstname, this.lastname, this.username})
+      {Key key,
+      this.idUser,
+      this.firstname,
+      this.lastname,
+      this.username})
       : super(key: key);
 
   _launchURL() async {
@@ -168,6 +176,7 @@ class SecondPage extends StatelessWidget {
                         padding:
                             const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                       ),
+                      
                     ]),
                 new Row(
                     mainAxisAlignment: MainAxisAlignment.center,

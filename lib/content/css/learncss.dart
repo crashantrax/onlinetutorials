@@ -61,13 +61,66 @@ class Learncss extends StatelessWidget {
                   child: new Align(
                     alignment: Alignment.centerLeft,
                     child: new Text(
-                      "This CSS tutorial contains hundreds of CSS examples."+"\n"
-                      +"With our online editor, you can edit the CSS, and click on a button to view the result.",
+                      "This CSS tutorial contains hundreds of CSS examples." +
+                          "\n" +
+                          "With our online editor, you can edit the CSS, and click on a button to view the result.",
                       style: new TextStyle(
                           fontSize: 13.0,
                           color: Colors.black,
                           fontWeight: FontWeight.w400,
                           fontFamily: "Ewert"),
+                    ),
+                  ),
+                ),
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    new Padding(
+                      child: new Text(
+                        "CSS Example",
+                        style: new TextStyle(
+                            fontSize: 30.0,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "Ewert"),
+                      ),
+                      padding:
+                          const EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(35.0, 0.0, 10.0, 10.0),
+                  child: Container(
+                    color: Colors.black,
+                    child: new Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 10.0),
+                        child: new Text(
+                          "body {\n" + 
+                          "   background-color:lightblue;\n" +
+                          "}\n" + 
+                          
+                          "h1 {\n" +
+                          "   color: white;\n"+
+                          "   text-align:center;\n"+
+                          "}\n"
+                          "p {\n"+
+                          "   font-family: verdana;\n"+
+                          "   font-size: 20px;\n"+
+                          "}\n"
+                          
+                          ,
+                          style: new TextStyle(
+                              fontSize: 13.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Ewert"),
+                        ),
+                      ),
                     ),
                   ),
                 ),
