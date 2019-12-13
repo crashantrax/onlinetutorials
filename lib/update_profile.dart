@@ -172,7 +172,7 @@ class _UpdateState extends State<Update> {
                                 new RaisedButton(
                                   child: const Text(
                                     'Update',
-                                    textScaleFactor: 2.0,
+                                    textScaleFactor: 1.0,
                                   ),
                                   onPressed: () {
                                     _editData();

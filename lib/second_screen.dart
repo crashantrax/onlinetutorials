@@ -72,12 +72,12 @@ class SecondPage extends StatelessWidget {
                         decoration: new BoxDecoration(
                           shape: BoxShape.circle,
                           image: new DecorationImage(
-                              fit: BoxFit.fill, image: new NetworkImage("")),
+                              fit: BoxFit.fill, image: new NetworkImage("https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png")),
                         ),
                       ),
                       new Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 50.0),
+                            horizontal: 10.0, vertical: 60.0),
                         child: new Column(
                           children: <Widget>[
                             // Text("User Name : ${this.username}"),
