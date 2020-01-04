@@ -52,7 +52,7 @@ class _ProfileState extends State<Profile> {
   }
 
   _launchURL() async {
-    const url = 'tel:27181132';
+    const url = 'tel:09672237300';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -119,7 +119,7 @@ class _ProfileState extends State<Profile> {
                                 children: <Widget>[
                                   Text(
                                     "User Name : ",
-                                    style: TextStyle(fontSize: 24.0),
+                                    style: TextStyle(fontSize: 20.0),
                                   ),
                                   SizedBox(
                                     width: 5.0,
@@ -134,7 +134,7 @@ class _ProfileState extends State<Profile> {
                                 children: <Widget>[
                                   Text(
                                     "Last Name : ",
-                                    style: TextStyle(fontSize: 24.0),
+                                    style: TextStyle(fontSize: 20.0),
                                   ),
                                   SizedBox(
                                     width: 5.0,
@@ -149,7 +149,7 @@ class _ProfileState extends State<Profile> {
                                 children: <Widget>[
                                   Text(
                                     "First Name : ",
-                                    style: TextStyle(fontSize: 24.0),
+                                    style: TextStyle(fontSize: 20.0),
                                   ),
                                   SizedBox(
                                     width: 5.0,
@@ -163,8 +163,8 @@ class _ProfileState extends State<Profile> {
                               Row(
                                 children: <Widget>[
                                   Text(
-                                    "Gender : ",
-                                    style: TextStyle(fontSize: 24.0),
+                                    "Gender        : ",
+                                    style: TextStyle(fontSize: 20.0),
                                   ),
                                   SizedBox(
                                     width: 5.0,

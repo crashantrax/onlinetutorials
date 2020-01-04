@@ -13,11 +13,11 @@ class _RegisterState extends State<Register> {
     final ThemeData base = ThemeData.light();
     return base.copyWith(
       accentColor: CeBrown900,
-      primaryColor: CePink100,
-      buttonColor: CePink100,
+      primaryColor: CeBlack1,
+      buttonColor: CeBlack1,
       scaffoldBackgroundColor: CeBackgroundBlack,
       cardColor: CeBackgroundBlack,
-      textSelectionColor: CePink100,
+      textSelectionColor: CeBlack1,
       errorColor: CeErrorRed,
       //TODO: Add the text themes (103)
       //TODO: Add the icon themes (103)

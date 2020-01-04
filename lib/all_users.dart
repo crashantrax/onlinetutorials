@@ -43,7 +43,11 @@ class _AllUsersState extends State<AllUsers> {
 
   void _deletUser(var id) async {
     var url =
+<<<<<<< HEAD
         "http://webonlinetutorial.ga/FlutterTraining/FlutterTraining/DeleteUser.php";
+=======
+        "http://webonlinetutorial.ga/FlutterTraining/DeleteUser.php";
+>>>>>>> adbf1250fff9e971f8d47aafb946d277a343966f
 
     var response = await http.post(url, body: {"userid": id});
     if (response.statusCode == 200) {
